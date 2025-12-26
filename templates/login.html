@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card" style="max-width: 400px; margin: 4rem auto;">
+    <h2 class="text-center mb-4">Access Folder</h2>
+    <form method="POST" action="{{ url_for('login') }}">
+        <div class="form-group">
+            <label for="phrase">Secret Phrase</label>
+            <input type="text" id="phrase" name="phrase" required placeholder="Enter your secret phrase">
+        </div>
+        <div class="form-group">
+            <label for="pin">4-Digit PIN</label>
+            <input type="password" id="pin" name="pin" required maxlength="4" pattern="\d{4}" placeholder="0000">
+        </div>
+        <button type="submit" class="btn btn-block">Unlock Details</button>
+    </form>
+    <div style="margin-top: 2rem; text-align: center; font-size: 0.8rem; color: var(--text-secondary);">
+        <p>No account needed. Just remember your credentials.</p>
+    </div>
+</div>
+{% endblock %}
